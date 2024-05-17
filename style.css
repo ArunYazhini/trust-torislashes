@@ -62,12 +62,12 @@ CSS STRUCTURE:
 /** 1. VARIABLES
 --------------------------------------------------------------*/
 :root {
-  --accent-color: #DF97A2;
-  --secondary-color: #F9E4E3;
+  --accent-color: rgb(6, 56, 53);
+  --secondary-color: #e3f9f2;
   --black-color: #3C3C3C;
   --light-black-color: #343536;
   --dark-color: #797876;
-  --primary-color: #DF97A2;
+  --primary-color: rgb(6, 56, 53);
   --primary-color-200: #E8F0F1;
   --primary-color-400: #c4e9ed;
   --gray-color: #777F81;
@@ -77,10 +77,10 @@ CSS STRUCTURE:
   --bs-gray-100: #EEEFEF;
   --bs-gray-300: #DCDCDC;
   --bs-primary-text-emphasis: var(--primary-color);
-  --bs-primary: #DF97A2;
+  --bs-primary: rgb(6, 56, 53);
   --bs-light-rgb: 255, 255, 255;
-  --bs-primary-rgb: 223, 151, 162;
-  --bs-secondary-rgb: 249, 228, 227;
+  --bs-primary-rgb: 6, 56, 53;
+  --bs-secondary-rgb: 11, 107, 101;
   --swiper-theme-color: #111 !important;
   --cadet-blue-color: #9AB4B7;
 }
@@ -219,16 +219,16 @@ h6 {
   --bs-btn-bg: var(--accent-color);
   --bs-btn-border-color: var(--accent-color);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #df808f;
-  --bs-btn-hover-border-color: #df808f;
+  --bs-btn-hover-bg: #38756b;
+  --bs-btn-hover-border-color: #38756b;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #df808f;
-  --bs-btn-active-border-color: #df808f;
+  --bs-btn-active-bg: #38756b;
+  --bs-btn-active-border-color: #38756b;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #df808f;
-  --bs-btn-disabled-border-color: #df808f;
+  --bs-btn-disabled-bg: #38756b;
+  --bs-btn-disabled-border-color: #38756b;
 }
 
 .btn-outline-primary {
