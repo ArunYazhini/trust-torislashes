@@ -444,7 +444,7 @@ svg.primary-color-500 {
 a.nav-link {
   font-family: var(--heading-font);
   text-transform: capitalize;
-  color: var(--black-color);
+  color: var(--light-color);
   font-size: 20px;
 }
 
