@@ -188,6 +188,13 @@ h6 {
   letter-spacing: 0.0675rem;
 }
 
+.textline h2 {
+  color: var(--black-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  letter-spacing: 0.0675rem;
+  text-transform: none !important;
+}
 
 /* - Content width
 --------------------------------------------------------------*/
@@ -520,6 +527,12 @@ a.hover-color h4:hover {
   color: var(--accent-color);
 }
 
+#services .row {
+  justify-content: center; /* Centers the columns */
+}
+#services .col-lg-3 {
+  flex: 0 0 auto; /* Ensures the columns don’t shrink unnecessarily */
+}
 
 /* 
  4.4 About style
@@ -600,19 +613,22 @@ iconify-icon.video-icon {
 
 /* 4.6 Footer Section
 /*----------------------------------------------*/
+
 iconify-icon.social-icon {
   font-size: 1.125rem;
   padding: 0.75rem;
   border-radius: 4.375rem;
-  border: 1px solid var(--accent-color);
-  color: var(--accent-color);
+  border: 1px solid #FFF;
+  color: #FFF;
+/* border: 1px solid var(--accent-color);
+  color: var(--accent-color); */
   transition: all 0.5s ease;
 }
 
 iconify-icon.social-icon:hover {
-  color: #FFF;
-  border: 1px solid var(--accent-color);
-  background: var(--accent-color);
+  color: var(--accent-color);
+  border: 1px solid #FFF;
+  background: #FFF;
 }
 
 
@@ -808,3 +824,57 @@ iconify-icon.quote {
   background-color: white; /* Ensure the background is not transparent */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
 }
+
+
+.google-map-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.google-map-box {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 1750px; /* Optional: Set a max width */
+  height: 400px; /* Fixed height for the map */
+  border: 2px solid var(--accent-color); /* Optional: Add border */
+  border-radius: 8px; /* Optional: Rounded corners */
+  overflow: hidden; /* Ensures the iframe fits inside */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.rating .star {
+  color: gold; /* Gold-colored stars */
+  font-size: 1.2rem; /* Adjust size as needed */
+}
+
+#gallery .entry-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Adjust spacing between items */
+  margin: 0 auto; /* Center the grid */
+}
+
+#gallery .entry-item {
+  aspect-ratio: 1 / 1; /* Makes all boxes square */
+  overflow: hidden; /* Ensures content doesn't overflow */
+  position: relative;
+}
+
+#gallery .entry-item img {
+  width: 85%;
+  height: 80%;
+  object-fit: cover; /* Ensures images fill the box proportionally */
+  display: block; /* Removes gaps below the image caused by inline behavior */
+}
+
+
+#gallery .container-lg {
+  padding-left: 15px; /* Adjust as needed */
+  padding-right: 15px; /* Adjust as needed */
+}
+
