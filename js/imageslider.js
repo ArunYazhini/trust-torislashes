@@ -1,4 +1,4 @@
-// Array of all images
+// Array of all images dynamically
 const images = [
     'images/Gallery/slider01.jpg',
     'images/Gallery/slider02.jpg',
@@ -28,6 +28,8 @@ let startIndex = 0;
 // Number of images visible at once
 const imagesPerPage = 5;
 
+
+
 // Function to render visible images
 function renderVisibleImages() {
     const galleryContainer = document.getElementById("gallery-images");
@@ -37,18 +39,27 @@ function renderVisibleImages() {
         const imgElement = document.createElement("img");
         imgElement.src = image;
         imgElement.alt = "Gallery Image";
+        imgElement.classList.add('gallery-image'); // Add class for styling
+        imgElement.onclick = function() { openModal(image); }; // Open modal on click
         galleryContainer.appendChild(imgElement);
     });
 
     updateSliderPosition();
 }
 
+
+
 // Function to update the slider position
 function updateSliderPosition() {
     const galleryContainer = document.getElementById("gallery-images");
-    const offset = -startIndex * 220; // Image width (200px) + margin (10px * 2)
+    const imageWidth = 270; // The width of the images
+    const margin = 20; // The margin between images (10px each side)
+    const totalWidth = imageWidth + margin * 2; // Total width of an image with margin
+    const offset = -startIndex * totalWidth; // Adjusted offset
+
     galleryContainer.style.transform = `translateX(${offset}px)`;
 }
+
 
 // Show the previous set of images
 function prevSlide() {
@@ -65,6 +76,51 @@ function nextSlide() {
         updateSliderPosition();
     }
 }
+
+// Function to open the modal and display the selected image
+function openModal(imageSrc) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = imageSrc;
+    modal.style.display = "block"; // Show modal
+
+    // Set the current index to the clicked image's index
+    const currentIndex = images.indexOf(imageSrc);
+    modal.dataset.currentIndex = currentIndex;
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Hide modal
+}
+
+// Function to show the next image in the modal
+function nextImage() {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    let currentIndex = parseInt(modal.dataset.currentIndex);
+
+    if (currentIndex + 1 < images.length) {
+        currentIndex++;
+        modalImage.src = images[currentIndex];
+        modal.dataset.currentIndex = currentIndex; // Update current index
+    }
+}
+
+// Function to show the previous image in the modal
+function prevImage() {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    let currentIndex = parseInt(modal.dataset.currentIndex);
+
+    if (currentIndex - 1 >= 0) {
+        currentIndex--;
+        modalImage.src = images[currentIndex];
+        modal.dataset.currentIndex = currentIndex; // Update current index
+    }
+}
+
 
 // Initial rendering of visible images
 renderVisibleImages();

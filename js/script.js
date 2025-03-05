@@ -166,7 +166,7 @@
     initJarallax();
     initProductQty();
 
-  
+ 
 
   }); // End of a document
 
