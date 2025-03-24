@@ -464,6 +464,10 @@ a.nav-link:hover {
   color: var(--primary-color) !important;
   outline: none;
 }
+/* Set nav link color to black in offcanvas for mobile */
+.offcanvas .nav-link {
+  color: black !important;
+}
 
 #primary-header .dropdown .search::after {
   content: none;
